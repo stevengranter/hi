@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+        :root { color:rgb(38, 229, 0);
+               background-color: black;
+               font-family:'Courier New', Courier, monospace;
+               font-size: 1.3em;    
+              
+        }
+        
+        body {
+            display:block;
+            height: 100%;
+          /*  background-image: url("images/CRT-monitor-frame.jpg");
+            background-size: 100%;
+            */
+         }
+
+        h1,h2,h3,h4 { font-weight:normal;
+                      text-transform: uppercase}
+
+        .wrapper { max-width: 80ch;
+                   margin: auto;
+                   padding: 0 3rem;
+        }
+
+
+        header > img {
+            display:flex;
+            
+            width:100%;
+            height: auto;
+            object-fit: contain;
+            margin:auto;
+
+            padding: 1.5vh 0;
+            
+        }
+       .rq-form-element {
+            background-color: black;
+             color: rgb(38, 229, 0);
+             font-family:'Courier New', Courier, monospace;
+             user-select: none;
+             caret-color: currentColor;
+             font-size: 1em;
+             max-width: 80ch;
+       }
+
+        /* 
+        Blinking Cursor
+        Source: https://jsfiddle.net/dygxxb7n/
+        */
+
+        .cursor {
+            position: relative;
+            user-select:none;
+        }
+        .cursor	i {
+            position: absolute;
+            width: 1px;
+            height: 80%;
+            background-color: color: rgb(38, 229, 0);
+            left: 5px;
+            top: 10%;
+            animation-name: blink;
+            animation-duration: 800ms;
+            animation-iteration-count: infinite;
+            opacity: 1;
+        }
+
+        .cursor input:focus + i {
+            display: 0;
+            border: 0;
+            color: black;
+            outline: 0;
+        }
+
+        @keyframes blink {
+            from { opacity: 1; }
+            to { opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+         <header>
+        <h1>tangent.server</h1>
+        <p>You've reached</p>
+        <!--
+        <pre> 
+       _              _                     _                 _                 _               _               _       
+      /\ \           / /\                  /\ \     _        /\ \              /\ \            /\ \     _      /\ \     
+      \_\ \         / /  \                /  \ \   /\_\     /  \ \            /  \ \          /  \ \   /\_\    \_\ \    
+      /\__ \       / / /\ \              / /\ \ \_/ / /    / /\ \_\          / /\ \ \        / /\ \ \_/ / /    /\__ \   
+     / /_ \ \     / / /\ \ \            / / /\ \___/ /    / / /\/_/         / / /\ \_\      / / /\ \___/ /    / /_ \ \  
+    / / /\ \ \   / / /  \ \ \          / / /  \/____/    / / / ______      / /_/_ \/_/     / / /  \/____/    / / /\ \ \ 
+   / / /  \/_/  / / /___/ /\ \        / / /    / / /    / / / /\_____\    / /____/\       / / /    / / /    / / /  \/_/ 
+  / / /        / / /_____/ /\ \      / / /    / / /    / / /  \/____ /   / /\____\/      / / /    / / /    / / /        
+ / / /        / /_________/\ \ \    / / /    / / /    / / /_____/ / /   / / /______     / / /    / / /    / / /         
+/_/ /        / / /_       __\ \_\  / / /    / / /    / / /______\/ /   / / /_______\   / / /    / / /    /_/ /          
+\_\/         \_\___\     /____/_/  \/_/     \/_/     \/___________/    \/__________/   \/_/     \/_/     \_\/           
+                                                                                                                            
+
+        
+                         .d8888b.  8888888888 8888888b.  888     888 8888888888 8888888b.
+                        d88P  Y88b 888        888   Y88b 888     888 888        888   Y88b
+                        Y88b.      888        888    888 888     888 888        888    888
+                         "Y888b.   8888888    888   d88P Y88b   d88P 8888888    888   d88P
+                            "Y88b. 888        8888888P"   Y88b d88P  888        8888888P"
+                              "888 888        888 T88b     Y88o88P   888        888 T88b
+                        Y88b  d88P 888        888  T88b     Y888P    888        888  T88b
+                         "Y8888P"  8888888888 888   T88b     Y8P     8888888888 888   T88b
+        </pre>
+
+        -->
+
+       
+            <img src="./images/ascii-tangent-01.png" alt="TANGENT" style="max-width:80ch">
+            <img src="./images/ascii-server-01.png" alt="SERVER" style="max-width:65%">
+        </header>
+
+        <p>Type /? for a list of commands</p>
+
+        <div class="cursor">
+        <input type="text" spellcheck="false" autocomplete="off" class="rq-form-element" autofocus>
+        <i></i>
+        </div>  
+
+    </div>
+</body>
+</html>
